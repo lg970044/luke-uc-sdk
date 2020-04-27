@@ -1,0 +1,19 @@
+{
+    "name": "luke/uc-sdk",
+    "description": "luke group user center sdk for php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liux",
+            "email": "liux@luke.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "hanson/foundation-sdk": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {"Luke\\Uc\\": "src"}
+    }
+}
