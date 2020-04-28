@@ -10,7 +10,7 @@ class Api extends AbstractAPI
     protected $appId;
     protected $secret;
     
-    public function __construct(Uc $app)
+    public function __construct(Application $app)
     {
         $this->app = $app;
         $this->baseUrl = $this->app->getConfig('base_url');
