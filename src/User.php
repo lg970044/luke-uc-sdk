@@ -27,8 +27,8 @@ class User extends Api
                 'code'          => $code,
                 'password'      => $password,
                 'email'         => $expand['email'] ?: '',
-                'nickName'      => $expand['nickname'] ?: '',
-                'headPic'       => $expand['headpic'] ?: '',
+                'nickName'      => $expand['nickName'] ?: '',
+                'headPic'       => $expand['headPic'] ?: '',
                 'sex'           => $expand['sex'] ?: '',
                 'birthday'      => $expand['birthday'] ?: ''
             ]
@@ -152,6 +152,29 @@ class User extends Api
             ]
         ];
         return $this->request('POST', '/api/user/resetByCode', $options);
+    }
+    
+    /**
+     * 更换绑定手机
+     * @param string $accessToken
+     * @param string $mobile
+     * @param string $code
+     * @return array
+     */
+    public function changeMobile($accessToken, $mobile, $code)
+    {
+        $options = [
+            'headers'   => [
+                'Authorization' => 'Bearer '.$accessToken
+            ],
+            'json'  => [
+                'clientId'      => $this->appId,
+                'clientSecret'  => $this->secret,
+                'phone'         => $mobile,
+                'code'          => $code
+            ]
+        ];
+        return $this->request('POST', '/api/user/changeMobile', $options);
     }
     
 }
